@@ -41,6 +41,7 @@ ARCHITECTURE behaviour OF FiberOptics_TX IS
 
 	CONSTANT HIGH : STD_LOGIC := '1';
 	CONSTANT LOW  : STD_LOGIC := '0';
+	CONSTANT xFF  : STD_LOGIC_VECTOR := "11111111";
 		
 	BEGIN				
 		PROCESS(clk)
@@ -56,6 +57,9 @@ ARCHITECTURE behaviour OF FiberOptics_TX IS
 							outBuffer(15 DOWNTO 8) := Sensor1;
 							outBuffer(23 DOWNTO 16) := Sensor1;--Sensor2; Sensor 1 for test purposes
 							outBuffer(31 DOWNTO 24) := outBuffer(15 DOWNTO 8) XOR outBuffer(23 DOWNTO 16);
+							IF (outBuffer(31 DOWNTO 24) = xFF) THEN
+								outBuffer(31 DOWNTO 24):= "00000000";
+							END IF;								
 						END IF;
 						serial <= outBuffer(bitSend);
 						bitSend := (bitSend + 1) MOD 32;
