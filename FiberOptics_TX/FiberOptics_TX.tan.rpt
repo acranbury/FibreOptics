@@ -1,0 +1,359 @@
+Timing Analyzer report for FiberOptics_TX
+Fri Nov 23 09:07:31 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From        ; To          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; -0.250 ns                        ; TX          ; serial~reg0 ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.980 ns                        ; serial~reg0 ; serial      ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 11.652 ns                        ; clk         ; clockOut    ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 4.491 ns                         ; Sensor1[4]  ; comb~12     ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 213.17 MHz ( period = 4.691 ns ) ; bitSend[3]  ; serial~reg0 ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;             ;             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------+-------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                            ;
++-------+------------------------------------------------+------------+-------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From       ; To          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------+-------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 213.17 MHz ( period = 4.691 ns )               ; bitSend[3] ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.452 ns                ;
+; N/A   ; 221.73 MHz ( period = 4.510 ns )               ; bitSend[0] ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.275 ns                ;
+; N/A   ; 224.62 MHz ( period = 4.452 ns )               ; bitSend[4] ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.213 ns                ;
+; N/A   ; 231.96 MHz ( period = 4.311 ns )               ; bitSend[2] ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.072 ns                ;
+; N/A   ; 248.76 MHz ( period = 4.020 ns )               ; bitSend[1] ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 3.781 ns                ;
+; N/A   ; 305.25 MHz ( period = 3.276 ns )               ; bitSend[0] ; bitSend[4]  ; clk        ; clk      ; None                        ; None                      ; 3.041 ns                ;
+; N/A   ; 312.89 MHz ( period = 3.196 ns )               ; bitSend[0] ; bitSend[3]  ; clk        ; clk      ; None                        ; None                      ; 2.961 ns                ;
+; N/A   ; 318.07 MHz ( period = 3.144 ns )               ; comb~11    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.902 ns                ;
+; N/A   ; 320.92 MHz ( period = 3.116 ns )               ; bitSend[0] ; bitSend[2]  ; clk        ; clk      ; None                        ; None                      ; 2.881 ns                ;
+; N/A   ; 335.23 MHz ( period = 2.983 ns )               ; comb~9     ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.741 ns                ;
+; N/A   ; 345.18 MHz ( period = 2.897 ns )               ; comb~13    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.655 ns                ;
+; N/A   ; 358.68 MHz ( period = 2.788 ns )               ; bitSend[1] ; bitSend[4]  ; clk        ; clk      ; None                        ; None                      ; 2.549 ns                ;
+; N/A   ; 359.45 MHz ( period = 2.782 ns )               ; comb~12    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.542 ns                ;
+; N/A   ; 364.56 MHz ( period = 2.743 ns )               ; comb~15    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.501 ns                ;
+; N/A   ; 369.28 MHz ( period = 2.708 ns )               ; bitSend[1] ; bitSend[3]  ; clk        ; clk      ; None                        ; None                      ; 2.469 ns                ;
+; N/A   ; 372.44 MHz ( period = 2.685 ns )               ; bitSend[0] ; bitSend[1]  ; clk        ; clk      ; None                        ; None                      ; 2.450 ns                ;
+; N/A   ; 379.08 MHz ( period = 2.638 ns )               ; comb~14    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.398 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns )               ; bitSend[1] ; bitSend[2]  ; clk        ; clk      ; None                        ; None                      ; 2.389 ns                ;
+; N/A   ; 397.77 MHz ( period = 2.514 ns )               ; comb~10    ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.274 ns                ;
+; N/A   ; 400.64 MHz ( period = 2.496 ns )               ; bitSend[3] ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 2.258 ns                ;
+; N/A   ; 401.12 MHz ( period = 2.493 ns )               ; bitSend[3] ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 2.255 ns                ;
+; N/A   ; 401.12 MHz ( period = 2.493 ns )               ; bitSend[3] ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 2.255 ns                ;
+; N/A   ; 401.28 MHz ( period = 2.492 ns )               ; bitSend[3] ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 2.254 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~8     ; serial~reg0 ; clk        ; clk      ; None                        ; None                      ; 2.106 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 2.019 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 2.016 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 2.016 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 2.015 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 2.004 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 2.004 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; bitSend[4]  ; clk        ; clk      ; None                        ; None                      ; 1.998 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 1.999 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 1.998 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 1.983 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 1.980 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 1.980 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 1.979 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; bitSend[1]  ; clk        ; clk      ; None                        ; None                      ; 1.957 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 1.878 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 1.875 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 1.875 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 1.874 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; bitSend[4]  ; clk        ; clk      ; None                        ; None                      ; 1.783 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 1.765 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 1.765 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 1.760 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 1.759 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 1.729 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 1.729 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 1.724 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 1.723 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; bitSend[3]  ; clk        ; clk      ; None                        ; None                      ; 1.703 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 1.624 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 1.624 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 1.619 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 1.618 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[3] ; bitSend[3]  ; clk        ; clk      ; None                        ; None                      ; 1.564 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 1.553 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 1.550 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 1.550 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 1.549 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[0] ; bitSend[0]  ; clk        ; clk      ; None                        ; None                      ; 1.492 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 1.299 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 1.299 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 1.294 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[1] ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 1.293 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[2] ; bitSend[2]  ; clk        ; clk      ; None                        ; None                      ; 1.271 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; bitSend[4] ; bitSend[4]  ; clk        ; clk      ; None                        ; None                      ; 0.848 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~12    ; comb~12     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~14    ; comb~14     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~10    ; comb~10     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~8     ; comb~8      ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~13    ; comb~13     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~15    ; comb~15     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~11    ; comb~11     ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
+; N/A   ; Restricted to 405.02 MHz ( period = 2.469 ns ) ; comb~9     ; comb~9      ; clk        ; clk      ; None                        ; None                      ; 0.454 ns                ;
++-------+------------------------------------------------+------------+-------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------+
+; tsu                                                                     ;
++-------+--------------+------------+------------+-------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From       ; To          ; To Clock ;
++-------+--------------+------------+------------+-------------+----------+
+; N/A   ; None         ; -0.250 ns  ; TX         ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -1.550 ns  ; Sensor1[3] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -1.568 ns  ; TX         ; bitSend[4]  ; clk      ;
+; N/A   ; None         ; -1.605 ns  ; Sensor1[7] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -1.648 ns  ; TX         ; bitSend[3]  ; clk      ;
+; N/A   ; None         ; -1.684 ns  ; Sensor1[1] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -1.728 ns  ; TX         ; bitSend[2]  ; clk      ;
+; N/A   ; None         ; -1.780 ns  ; Sensor1[5] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -2.154 ns  ; Sensor1[4] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -2.159 ns  ; TX         ; bitSend[1]  ; clk      ;
+; N/A   ; None         ; -2.212 ns  ; Sensor1[2] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -2.292 ns  ; Sensor1[6] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -2.348 ns  ; Sensor1[0] ; serial~reg0 ; clk      ;
+; N/A   ; None         ; -2.445 ns  ; TX         ; comb~12     ; clk      ;
+; N/A   ; None         ; -2.448 ns  ; TX         ; comb~14     ; clk      ;
+; N/A   ; None         ; -2.448 ns  ; TX         ; comb~10     ; clk      ;
+; N/A   ; None         ; -2.449 ns  ; TX         ; comb~8      ; clk      ;
+; N/A   ; None         ; -2.701 ns  ; TX         ; comb~11     ; clk      ;
+; N/A   ; None         ; -2.701 ns  ; TX         ; comb~9      ; clk      ;
+; N/A   ; None         ; -2.706 ns  ; TX         ; comb~15     ; clk      ;
+; N/A   ; None         ; -2.707 ns  ; TX         ; comb~13     ; clk      ;
+; N/A   ; None         ; -3.113 ns  ; TX         ; bitSend[0]  ; clk      ;
+; N/A   ; None         ; -3.655 ns  ; Sensor1[7] ; comb~15     ; clk      ;
+; N/A   ; None         ; -3.974 ns  ; Sensor1[1] ; comb~9      ; clk      ;
+; N/A   ; None         ; -3.984 ns  ; Sensor1[5] ; comb~13     ; clk      ;
+; N/A   ; None         ; -4.001 ns  ; Sensor1[3] ; comb~11     ; clk      ;
+; N/A   ; None         ; -4.001 ns  ; Sensor1[0] ; comb~8      ; clk      ;
+; N/A   ; None         ; -4.033 ns  ; Sensor1[2] ; comb~10     ; clk      ;
+; N/A   ; None         ; -4.237 ns  ; Sensor1[6] ; comb~14     ; clk      ;
+; N/A   ; None         ; -4.243 ns  ; Sensor1[4] ; comb~12     ; clk      ;
++-------+--------------+------------+------------+-------------+----------+
+
+
++-----------------------------------------------------------------------+
+; tco                                                                   ;
++-------+--------------+------------+-------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From        ; To     ; From Clock ;
++-------+--------------+------------+-------------+--------+------------+
+; N/A   ; None         ; 11.980 ns  ; serial~reg0 ; serial ; clk        ;
++-------+--------------+------------+-------------+--------+------------+
+
+
++---------------------------------------------------------------+
+; tpd                                                           ;
++-------+-------------------+-----------------+------+----------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To       ;
++-------+-------------------+-----------------+------+----------+
+; N/A   ; None              ; 11.652 ns       ; clk  ; clockOut ;
+; N/A   ; None              ; 8.442 ns        ; TX   ; clockOut ;
++-------+-------------------+-----------------+------+----------+
+
+
++-------------------------------------------------------------------------------+
+; th                                                                            ;
++---------------+-------------+-----------+------------+-------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From       ; To          ; To Clock ;
++---------------+-------------+-----------+------------+-------------+----------+
+; N/A           ; None        ; 4.491 ns  ; Sensor1[4] ; comb~12     ; clk      ;
+; N/A           ; None        ; 4.485 ns  ; Sensor1[6] ; comb~14     ; clk      ;
+; N/A           ; None        ; 4.281 ns  ; Sensor1[2] ; comb~10     ; clk      ;
+; N/A           ; None        ; 4.249 ns  ; Sensor1[3] ; comb~11     ; clk      ;
+; N/A           ; None        ; 4.249 ns  ; Sensor1[0] ; comb~8      ; clk      ;
+; N/A           ; None        ; 4.232 ns  ; Sensor1[5] ; comb~13     ; clk      ;
+; N/A           ; None        ; 4.222 ns  ; Sensor1[1] ; comb~9      ; clk      ;
+; N/A           ; None        ; 3.920 ns  ; TX         ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 3.918 ns  ; TX         ; bitSend[4]  ; clk      ;
+; N/A           ; None        ; 3.918 ns  ; TX         ; bitSend[3]  ; clk      ;
+; N/A           ; None        ; 3.903 ns  ; Sensor1[7] ; comb~15     ; clk      ;
+; N/A           ; None        ; 3.809 ns  ; TX         ; comb~13     ; clk      ;
+; N/A           ; None        ; 3.809 ns  ; TX         ; comb~15     ; clk      ;
+; N/A           ; None        ; 3.809 ns  ; TX         ; comb~11     ; clk      ;
+; N/A           ; None        ; 3.809 ns  ; TX         ; comb~9      ; clk      ;
+; N/A           ; None        ; 3.608 ns  ; TX         ; bitSend[2]  ; clk      ;
+; N/A           ; None        ; 3.530 ns  ; TX         ; comb~12     ; clk      ;
+; N/A           ; None        ; 3.530 ns  ; TX         ; comb~14     ; clk      ;
+; N/A           ; None        ; 3.530 ns  ; TX         ; comb~10     ; clk      ;
+; N/A           ; None        ; 3.530 ns  ; TX         ; comb~8      ; clk      ;
+; N/A           ; None        ; 3.361 ns  ; TX         ; bitSend[0]  ; clk      ;
+; N/A           ; None        ; 2.774 ns  ; TX         ; bitSend[1]  ; clk      ;
+; N/A           ; None        ; 2.596 ns  ; Sensor1[0] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 2.540 ns  ; Sensor1[6] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 2.460 ns  ; Sensor1[2] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 2.402 ns  ; Sensor1[4] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 2.028 ns  ; Sensor1[5] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 1.932 ns  ; Sensor1[1] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 1.853 ns  ; Sensor1[7] ; serial~reg0 ; clk      ;
+; N/A           ; None        ; 1.798 ns  ; Sensor1[3] ; serial~reg0 ; clk      ;
++---------------+-------------+-----------+------------+-------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Fri Nov 23 09:07:30 2012
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off FiberOptics_TX -c FiberOptics_TX --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 213.17 MHz between source register "bitSend[3]" and destination register "serial~reg0" (period= 4.691 ns)
+    Info: + Longest register to register delay is 4.452 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X26_Y17_N13; Fanout = 4; REG Node = 'bitSend[3]'
+        Info: 2: + IC(0.388 ns) + CELL(0.545 ns) = 0.933 ns; Loc. = LCCOMB_X26_Y17_N30; Fanout = 1; COMB Node = 'Equal0~35'
+        Info: 3: + IC(0.290 ns) + CELL(0.178 ns) = 1.401 ns; Loc. = LCCOMB_X26_Y17_N22; Fanout = 8; COMB Node = 'Equal0~36'
+        Info: 4: + IC(0.329 ns) + CELL(0.178 ns) = 1.908 ns; Loc. = LCCOMB_X26_Y17_N4; Fanout = 2; COMB Node = 'outBuffer~639'
+        Info: 5: + IC(0.304 ns) + CELL(0.322 ns) = 2.534 ns; Loc. = LCCOMB_X26_Y17_N24; Fanout = 1; COMB Node = 'Mux0~542'
+        Info: 6: + IC(0.319 ns) + CELL(0.545 ns) = 3.398 ns; Loc. = LCCOMB_X26_Y17_N2; Fanout = 1; COMB Node = 'Mux0~543'
+        Info: 7: + IC(0.306 ns) + CELL(0.178 ns) = 3.882 ns; Loc. = LCCOMB_X26_Y17_N6; Fanout = 1; COMB Node = 'Mux0~544'
+        Info: 8: + IC(0.296 ns) + CELL(0.178 ns) = 4.356 ns; Loc. = LCCOMB_X26_Y17_N28; Fanout = 1; COMB Node = 'Mux0~545'
+        Info: 9: + IC(0.000 ns) + CELL(0.096 ns) = 4.452 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+        Info: Total cell delay = 2.220 ns ( 49.87 % )
+        Info: Total interconnect delay = 2.232 ns ( 50.13 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.193 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+            Info: 2: + IC(5.728 ns) + CELL(0.602 ns) = 7.193 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+            Info: Total cell delay = 1.465 ns ( 20.37 % )
+            Info: Total interconnect delay = 5.728 ns ( 79.63 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.193 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+            Info: 2: + IC(5.728 ns) + CELL(0.602 ns) = 7.193 ns; Loc. = LCFF_X26_Y17_N13; Fanout = 4; REG Node = 'bitSend[3]'
+            Info: Total cell delay = 1.465 ns ( 20.37 % )
+            Info: Total interconnect delay = 5.728 ns ( 79.63 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "serial~reg0" (data pin = "TX", clock pin = "clk") is -0.250 ns
+    Info: + Longest pin to register delay is 6.981 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 20; PIN Node = 'TX'
+        Info: 2: + IC(1.920 ns) + CELL(0.516 ns) = 3.462 ns; Loc. = LCCOMB_X26_Y17_N30; Fanout = 1; COMB Node = 'Equal0~35'
+        Info: 3: + IC(0.290 ns) + CELL(0.178 ns) = 3.930 ns; Loc. = LCCOMB_X26_Y17_N22; Fanout = 8; COMB Node = 'Equal0~36'
+        Info: 4: + IC(0.329 ns) + CELL(0.178 ns) = 4.437 ns; Loc. = LCCOMB_X26_Y17_N4; Fanout = 2; COMB Node = 'outBuffer~639'
+        Info: 5: + IC(0.304 ns) + CELL(0.322 ns) = 5.063 ns; Loc. = LCCOMB_X26_Y17_N24; Fanout = 1; COMB Node = 'Mux0~542'
+        Info: 6: + IC(0.319 ns) + CELL(0.545 ns) = 5.927 ns; Loc. = LCCOMB_X26_Y17_N2; Fanout = 1; COMB Node = 'Mux0~543'
+        Info: 7: + IC(0.306 ns) + CELL(0.178 ns) = 6.411 ns; Loc. = LCCOMB_X26_Y17_N6; Fanout = 1; COMB Node = 'Mux0~544'
+        Info: 8: + IC(0.296 ns) + CELL(0.178 ns) = 6.885 ns; Loc. = LCCOMB_X26_Y17_N28; Fanout = 1; COMB Node = 'Mux0~545'
+        Info: 9: + IC(0.000 ns) + CELL(0.096 ns) = 6.981 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+        Info: Total cell delay = 3.217 ns ( 46.08 % )
+        Info: Total interconnect delay = 3.764 ns ( 53.92 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 7.193 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+        Info: 2: + IC(5.728 ns) + CELL(0.602 ns) = 7.193 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+        Info: Total cell delay = 1.465 ns ( 20.37 % )
+        Info: Total interconnect delay = 5.728 ns ( 79.63 % )
+Info: tco from clock "clk" to destination pin "serial" through register "serial~reg0" is 11.980 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.193 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+        Info: 2: + IC(5.728 ns) + CELL(0.602 ns) = 7.193 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+        Info: Total cell delay = 1.465 ns ( 20.37 % )
+        Info: Total interconnect delay = 5.728 ns ( 79.63 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 4.510 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X26_Y17_N29; Fanout = 1; REG Node = 'serial~reg0'
+        Info: 2: + IC(1.504 ns) + CELL(3.006 ns) = 4.510 ns; Loc. = PIN_A13; Fanout = 0; PIN Node = 'serial'
+        Info: Total cell delay = 3.006 ns ( 66.65 % )
+        Info: Total interconnect delay = 1.504 ns ( 33.35 % )
+Info: Longest tpd from source pin "clk" to destination pin "clockOut" is 11.652 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+    Info: 2: + IC(5.766 ns) + CELL(0.322 ns) = 6.951 ns; Loc. = LCCOMB_X27_Y17_N4; Fanout = 1; COMB Node = 'clockOut~11'
+    Info: 3: + IC(1.695 ns) + CELL(3.006 ns) = 11.652 ns; Loc. = PIN_A14; Fanout = 0; PIN Node = 'clockOut'
+    Info: Total cell delay = 4.191 ns ( 35.97 % )
+    Info: Total interconnect delay = 7.461 ns ( 64.03 % )
+Info: th for register "comb~12" (data pin = "Sensor1[4]", clock pin = "clk") is 4.491 ns
+    Info: + Longest clock path from clock "clk" to destination register is 7.194 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_B13; Fanout = 15; CLK Node = 'clk'
+        Info: 2: + IC(5.729 ns) + CELL(0.602 ns) = 7.194 ns; Loc. = LCFF_X27_Y17_N15; Fanout = 1; REG Node = 'comb~12'
+        Info: Total cell delay = 1.465 ns ( 20.36 % )
+        Info: Total interconnect delay = 5.729 ns ( 79.64 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 2.989 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_W12; Fanout = 1; PIN Node = 'Sensor1[4]'
+        Info: 2: + IC(1.342 ns) + CELL(0.545 ns) = 2.893 ns; Loc. = LCCOMB_X27_Y17_N14; Fanout = 2; COMB Node = 'outBuffer~633'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 2.989 ns; Loc. = LCFF_X27_Y17_N15; Fanout = 1; REG Node = 'comb~12'
+        Info: Total cell delay = 1.647 ns ( 55.10 % )
+        Info: Total interconnect delay = 1.342 ns ( 44.90 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Processing ended: Fri Nov 23 09:07:31 2012
+    Info: Elapsed time: 00:00:01
+
+
