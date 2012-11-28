@@ -41,28 +41,28 @@ ARCHITECTURE behaviour OF FiberOptics_TX IS
 
 	CONSTANT HIGH : STD_LOGIC := '1';
 	CONSTANT LOW  : STD_LOGIC := '0';
-	CONSTANT xFF  : STD_LOGIC_VECTOR := "11111111";
+	CONSTANT SYNC  : STD_LOGIC_VECTOR := "111111111";
 		
 	BEGIN				
 		PROCESS(clk)
-			VARIABLE bitSend : INTEGER RANGE 0 TO 31 := 0;
-			VARIABLE outBuffer : STD_LOGIC_VECTOR (31 DOWNTO 0);
+			VARIABLE bitSend : INTEGER RANGE 0 TO 35 := 0;
+			VARIABLE outBuffer : STD_LOGIC_VECTOR (35 DOWNTO 0);
 			
 			BEGIN
 				IF (TX = HIGH) THEN
 					clockOut <= clk;
 					IF (rising_edge(clk)) THEN
 						IF (bitSend = 0) THEN
-							outBuffer(7 DOWNTO 0) := "11111111";
-							outBuffer(15 DOWNTO 8) := Sensor1;
-							outBuffer(23 DOWNTO 16) := Sensor1;--Sensor2; Sensor 1 for test purposes
-							outBuffer(31 DOWNTO 24) := outBuffer(15 DOWNTO 8) XOR outBuffer(23 DOWNTO 16);
-							IF (outBuffer(31 DOWNTO 24) = xFF) THEN
-								outBuffer(31 DOWNTO 24):= "00000000";
-							END IF;								
+							outBuffer(8 DOWNTO 0) := SYNC;
+							outBuffer(16 DOWNTO 9) := Sensor1;
+							outBuffer(17) := LOW;
+							outBuffer(25 DOWNTO 18) := Sensor1;--Sensor2; Sensor 1 for test purposes
+							outBuffer(26) := LOW;
+							outBuffer(34 DOWNTO 27) := outBuffer(16 DOWNTO 9) XOR outBuffer(25 DOWNTO 18);
+							outBuffer(35) := LOW;							
 						END IF;
 						serial <= outBuffer(bitSend);
-						bitSend := (bitSend + 1) MOD 32;
+						bitSend := (bitSend + 1) MOD 36;
 					END IF;
 				ELSE
 					bitSend := 0;
