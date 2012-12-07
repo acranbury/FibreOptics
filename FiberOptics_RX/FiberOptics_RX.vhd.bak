@@ -1,0 +1,18 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+ENTITY FiberOptics_RX IS
+	GENERIC ( LG_N_STATES : INTEGER := 3 );
+	PORT(	clk:		IN		STD_LOGIC;
+			d:			IN		STD_LOGIC;
+			q: 		OUT	STD_LOGIC_VECTOR(LG_N_STATES-1 DOWNTO 0) );
+END FiberOptics_RX;
+
+ARCHITECTURE decode OF FiberOptics_RX IS
+	BEGIN	
+	PROCESS(clk) IS
+		BEGIN		
+			
+	END PROCESS;
+END;

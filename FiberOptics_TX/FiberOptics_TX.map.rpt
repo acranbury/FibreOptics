@@ -1,0 +1,246 @@
+Analysis & Synthesis report for FiberOptics_TX
+Fri Nov 23 09:07:10 2012
+Version 6.0 Build 178 04/27/2006 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Source assignments for Top-level Entity: |FiberOptics_TX
+  9. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Nov 23 09:07:10 2012    ;
+; Quartus II Version                 ; 6.0 Build 178 04/27/2006 SJ Full Version ;
+; Revision Name                      ; FiberOptics_TX                           ;
+; Top-level Entity Name              ; FiberOptics_TX                           ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 24                                       ;
+; Total registers                    ; 14                                       ;
+; Total pins                         ; 20                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                              ; FiberOptics_TX     ; FiberOptics_TX     ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; FiberOptics_TX.vhd               ; yes             ; User VHDL File  ; G:/2nd Year/VDHL/Project 3- Fiber Optic System/FiberOptics_TX.vhd ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 24    ;
+; Total combinational functions               ; 24    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 7     ;
+;     -- 3 input functions                    ; 12    ;
+;     -- <=2 input functions                  ; 5     ;
+;         -- Combinational cells for routing  ; 0     ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 21    ;
+;     -- arithmetic mode                      ; 3     ;
+; Total registers                             ; 14    ;
+; I/O pins                                    ; 20    ;
+; Maximum fan-out node                        ; TX    ;
+; Maximum fan-out                             ; 18    ;
+; Total fan-out                               ; 112   ;
+; Average fan-out                             ; 1.93  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+; |FiberOptics_TX            ; 24 (24)           ; 14 (14)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 20   ; 0            ; |FiberOptics_TX     ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 14    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Source assignments for Top-level Entity: |FiberOptics_TX ;
++----------------+-------+------+--------------------------+
+; Assignment     ; Value ; From ; To                       ;
++----------------+-------+------+--------------------------+
+; POWER_UP_LEVEL ; Low   ; -    ; bitSend[0]               ;
+; POWER_UP_LEVEL ; Low   ; -    ; bitSend[1]               ;
+; POWER_UP_LEVEL ; Low   ; -    ; bitSend[2]               ;
+; POWER_UP_LEVEL ; Low   ; -    ; bitSend[3]               ;
+; POWER_UP_LEVEL ; Low   ; -    ; bitSend[4]               ;
++----------------+-------+------+--------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 178 04/27/2006 SJ Full Version
+    Info: Processing started: Fri Nov 23 09:07:09 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FiberOptics_TX -c FiberOptics_TX
+Info: Found 2 design units, including 1 entities, in source file FiberOptics_TX.vhd
+    Info: Found design unit 1: FiberOptics_TX-behaviour
+    Info: Found entity 1: FiberOptics_TX
+Info: Elaborating entity "FiberOptics_TX" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at FiberOptics_TX.vhd(51): signal "TX" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10631): VHDL Process Statement warning at FiberOptics_TX.vhd(46): inferring latch(es) for signal or variable "outBuffer", which holds its previous value in one or more paths through the process
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "comb~4" merged to single register "comb~0"
+    Info: Duplicate register "comb~7" merged to single register "comb~0"
+    Info: Duplicate register "comb~3" merged to single register "comb~0"
+    Info: Duplicate register "comb~1" merged to single register "comb~0"
+    Info: Duplicate register "comb~5" merged to single register "comb~0"
+    Info: Duplicate register "comb~2" merged to single register "comb~0"
+    Info: Duplicate register "comb~6" merged to single register "comb~0"
+    Info: Duplicate register "comb~16" merged to single register "comb~8"
+    Info: Duplicate register "comb~17" merged to single register "comb~9"
+    Info: Duplicate register "comb~18" merged to single register "comb~10"
+    Info: Duplicate register "comb~19" merged to single register "comb~11"
+    Info: Duplicate register "comb~20" merged to single register "comb~12"
+    Info: Duplicate register "comb~21" merged to single register "comb~13"
+    Info: Duplicate register "comb~22" merged to single register "comb~14"
+    Info: Duplicate register "comb~23" merged to single register "comb~15"
+    Info: Duplicate register "comb~26" merged to single register "comb~24"
+    Info: Duplicate register "comb~31" merged to single register "comb~24"
+    Info: Duplicate register "comb~28" merged to single register "comb~24"
+    Info: Duplicate register "comb~25" merged to single register "comb~24"
+    Info: Duplicate register "comb~27" merged to single register "comb~24"
+    Info: Duplicate register "comb~29" merged to single register "comb~24"
+    Info: Duplicate register "comb~30" merged to single register "comb~24"
+Info: Power-up level of register "comb~0" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "comb~0" with stuck data_in port to stuck value VCC
+Warning: Reduced register "comb~24" with stuck data_in port to stuck value GND
+Warning: Design contains 8 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "Sensor2[0]"
+    Warning: No output dependent on input pin "Sensor2[1]"
+    Warning: No output dependent on input pin "Sensor2[2]"
+    Warning: No output dependent on input pin "Sensor2[3]"
+    Warning: No output dependent on input pin "Sensor2[4]"
+    Warning: No output dependent on input pin "Sensor2[5]"
+    Warning: No output dependent on input pin "Sensor2[6]"
+    Warning: No output dependent on input pin "Sensor2[7]"
+Info: Implemented 52 device resources after synthesis - the final resource count might be different
+    Info: Implemented 18 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 32 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Processing ended: Fri Nov 23 09:07:10 2012
+    Info: Elapsed time: 00:00:02
+
+

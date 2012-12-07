@@ -1,0 +1,1003 @@
+TimeQuest Timing Analyzer report for FiberOptics_RX
+Thu Nov 22 01:03:46 2012
+Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition ;
+; Revision Name      ; FiberOptics_RX                                                  ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C20F484C7                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 250.88 MHz ; 250.88 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.986 ; -29.929       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.469 ; -16.133               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                    ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -2.986 ; bitCount[0]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 4.005      ;
+; -2.986 ; bitCount[0]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 4.005      ;
+; -2.941 ; bitCount[1]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.960      ;
+; -2.941 ; bitCount[1]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.960      ;
+; -2.882 ; bitCount[0]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 3.901      ;
+; -2.879 ; bitCount[0]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.917      ;
+; -2.879 ; bitCount[0]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.917      ;
+; -2.877 ; bitCount[0]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.915      ;
+; -2.876 ; bitCount[0]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.914      ;
+; -2.837 ; bitCount[1]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 3.856      ;
+; -2.834 ; bitCount[1]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.872      ;
+; -2.834 ; bitCount[1]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.872      ;
+; -2.832 ; bitCount[1]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.870      ;
+; -2.831 ; bitCount[0]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.869      ;
+; -2.831 ; bitCount[1]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.869      ;
+; -2.815 ; bitCount[2]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.834      ;
+; -2.815 ; bitCount[2]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.834      ;
+; -2.786 ; bitCount[1]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.824      ;
+; -2.730 ; bitCount[3]  ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.768      ;
+; -2.730 ; bitCount[3]  ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.768      ;
+; -2.481 ; syncCount[3] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.500      ;
+; -2.481 ; syncCount[3] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.500      ;
+; -2.445 ; bitCount[2]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 3.464      ;
+; -2.442 ; bitCount[2]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.480      ;
+; -2.442 ; bitCount[2]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.480      ;
+; -2.440 ; bitCount[2]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.478      ;
+; -2.439 ; bitCount[2]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.477      ;
+; -2.394 ; bitCount[2]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.432      ;
+; -2.388 ; syncCount[1] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.407      ;
+; -2.388 ; syncCount[1] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.407      ;
+; -2.383 ; bitCount[3]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.421      ;
+; -2.380 ; bitCount[3]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.019      ; 3.437      ;
+; -2.380 ; bitCount[3]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.019      ; 3.437      ;
+; -2.378 ; bitCount[3]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.019      ; 3.435      ;
+; -2.377 ; bitCount[3]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.019      ; 3.434      ;
+; -2.332 ; bitCount[3]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.019      ; 3.389      ;
+; -2.294 ; syncCount[0] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.313      ;
+; -2.294 ; syncCount[0] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.313      ;
+; -2.292 ; syncCount[4] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.311      ;
+; -2.292 ; syncCount[4] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.311      ;
+; -2.227 ; syncCount[2] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.246      ;
+; -2.227 ; syncCount[2] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.019     ; 3.246      ;
+; -2.136 ; client[0]    ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.174      ;
+; -2.136 ; client[0]    ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.174      ;
+; -2.105 ; syncCount[3] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 3.124      ;
+; -2.102 ; syncCount[3] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.140      ;
+; -2.102 ; syncCount[3] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.140      ;
+; -2.100 ; syncCount[3] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.138      ;
+; -2.099 ; syncCount[3] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.137      ;
+; -2.088 ; client[1]    ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.126      ;
+; -2.088 ; client[1]    ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 3.126      ;
+; -2.054 ; syncCount[3] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.092      ;
+; -2.012 ; syncCount[1] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 3.031      ;
+; -2.009 ; syncCount[1] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.047      ;
+; -2.009 ; syncCount[1] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.047      ;
+; -2.007 ; syncCount[1] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.045      ;
+; -2.006 ; syncCount[1] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.044      ;
+; -1.961 ; syncCount[1] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.999      ;
+; -1.945 ; bitCount[4]  ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 2.983      ;
+; -1.945 ; bitCount[4]  ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 2.983      ;
+; -1.918 ; syncCount[0] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 2.937      ;
+; -1.916 ; syncCount[4] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 2.935      ;
+; -1.915 ; syncCount[0] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.953      ;
+; -1.915 ; syncCount[0] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.953      ;
+; -1.913 ; syncCount[4] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.951      ;
+; -1.913 ; syncCount[4] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.951      ;
+; -1.913 ; syncCount[0] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.951      ;
+; -1.912 ; syncCount[0] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.950      ;
+; -1.911 ; syncCount[4] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.949      ;
+; -1.910 ; syncCount[4] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.948      ;
+; -1.867 ; syncCount[0] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.905      ;
+; -1.865 ; syncCount[4] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.903      ;
+; -1.851 ; syncCount[2] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.019     ; 2.870      ;
+; -1.848 ; syncCount[2] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.886      ;
+; -1.848 ; syncCount[2] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.886      ;
+; -1.846 ; syncCount[2] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.884      ;
+; -1.845 ; syncCount[2] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.883      ;
+; -1.800 ; syncCount[2] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.838      ;
+; -1.766 ; client[0]    ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.804      ;
+; -1.763 ; client[0]    ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.820      ;
+; -1.763 ; client[0]    ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.820      ;
+; -1.761 ; client[0]    ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.818      ;
+; -1.760 ; client[0]    ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.817      ;
+; -1.718 ; client[1]    ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.756      ;
+; -1.715 ; client[1]    ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.772      ;
+; -1.715 ; client[1]    ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.772      ;
+; -1.715 ; client[0]    ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.772      ;
+; -1.713 ; client[1]    ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.770      ;
+; -1.712 ; client[1]    ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.769      ;
+; -1.692 ; syncCount[3] ; bitCount[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.730      ;
+; -1.692 ; syncCount[3] ; bitCount[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.730      ;
+; -1.692 ; syncCount[3] ; bitCount[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.730      ;
+; -1.667 ; client[1]    ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.019      ; 2.724      ;
+; -1.657 ; bitCount[0]  ; bitCount[4]  ; clk          ; clk         ; 1.000        ; -0.019     ; 2.676      ;
+; -1.620 ; bitCount[3]  ; bitCount[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.658      ;
+; -1.612 ; bitCount[1]  ; bitCount[4]  ; clk          ; clk         ; 1.000        ; -0.019     ; 2.631      ;
+; -1.599 ; syncCount[1] ; bitCount[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.637      ;
+; -1.599 ; syncCount[1] ; bitCount[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.637      ;
+; -1.599 ; syncCount[1] ; bitCount[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.637      ;
+; -1.598 ; bitCount[4]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.636      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                    ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; client[0]    ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; client[1]    ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; syncCount[0] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; syncCount[1] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; syncCount[4] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 1.157 ; syncCount[0] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.443      ;
+; 1.496 ; client[0]    ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.782      ;
+; 1.587 ; bitCount[4]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
+; 1.604 ; bitCount[2]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.890      ;
+; 1.726 ; syncCount[2] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.012      ;
+; 1.803 ; bitCount[0]  ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.819 ; syncCount[3] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.105      ;
+; 1.836 ; syncCount[2] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.103      ;
+; 1.841 ; bitCount[1]  ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.127      ;
+; 1.888 ; syncCount[2] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.174      ;
+; 1.891 ; syncCount[0] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.177      ;
+; 1.901 ; syncCount[4] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.168      ;
+; 1.903 ; syncCount[0] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.170      ;
+; 1.978 ; syncCount[3] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.264      ;
+; 1.997 ; syncCount[1] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.264      ;
+; 2.069 ; syncCount[1] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.082 ; bitCount[1]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.368      ;
+; 2.090 ; syncCount[3] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.357      ;
+; 2.127 ; bitCount[0]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.413      ;
+; 2.141 ; syncCount[0] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.427      ;
+; 2.190 ; syncCount[2] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.476      ;
+; 2.190 ; syncCount[2] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.476      ;
+; 2.190 ; syncCount[2] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.476      ;
+; 2.197 ; syncCount[1] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.483      ;
+; 2.212 ; syncCount[2] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.498      ;
+; 2.232 ; syncCount[1] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.518      ;
+; 2.238 ; bitCount[2]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.505      ;
+; 2.239 ; bitCount[0]  ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.525      ;
+; 2.255 ; syncCount[4] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.541      ;
+; 2.255 ; syncCount[4] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.541      ;
+; 2.255 ; syncCount[4] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.541      ;
+; 2.257 ; syncCount[0] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.543      ;
+; 2.257 ; syncCount[0] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.543      ;
+; 2.257 ; syncCount[0] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.543      ;
+; 2.267 ; syncCount[0] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.553      ;
+; 2.299 ; bitCount[4]  ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.604      ;
+; 2.344 ; bitCount[4]  ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.649      ;
+; 2.345 ; bitCount[4]  ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.650      ;
+; 2.347 ; bitCount[4]  ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.652      ;
+; 2.347 ; bitCount[4]  ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.652      ;
+; 2.349 ; bitCount[4]  ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.635      ;
+; 2.349 ; bitCount[4]  ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.635      ;
+; 2.350 ; bitCount[4]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.636      ;
+; 2.351 ; syncCount[1] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.637      ;
+; 2.351 ; syncCount[1] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.637      ;
+; 2.351 ; syncCount[1] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.637      ;
+; 2.364 ; bitCount[1]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.631      ;
+; 2.372 ; bitCount[3]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.658      ;
+; 2.409 ; bitCount[0]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.676      ;
+; 2.419 ; client[1]    ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.724      ;
+; 2.444 ; syncCount[3] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.730      ;
+; 2.444 ; syncCount[3] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.730      ;
+; 2.444 ; syncCount[3] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.730      ;
+; 2.464 ; client[1]    ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.769      ;
+; 2.465 ; client[1]    ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.770      ;
+; 2.467 ; client[1]    ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.772      ;
+; 2.467 ; client[1]    ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.772      ;
+; 2.467 ; client[0]    ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.772      ;
+; 2.469 ; client[1]    ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.755      ;
+; 2.470 ; client[1]    ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.756      ;
+; 2.505 ; bitCount[3]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.791      ;
+; 2.512 ; client[0]    ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.817      ;
+; 2.513 ; client[0]    ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.818      ;
+; 2.515 ; client[0]    ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.820      ;
+; 2.515 ; client[0]    ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.019      ; 2.820      ;
+; 2.518 ; client[0]    ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.804      ;
+; 2.597 ; syncCount[2] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.883      ;
+; 2.600 ; syncCount[2] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.886      ;
+; 2.602 ; syncCount[2] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.869      ;
+; 2.602 ; syncCount[2] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.869      ;
+; 2.603 ; syncCount[2] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.870      ;
+; 2.617 ; syncCount[4] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.903      ;
+; 2.662 ; syncCount[4] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.948      ;
+; 2.663 ; syncCount[4] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.949      ;
+; 2.665 ; syncCount[4] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.951      ;
+; 2.667 ; syncCount[4] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.934      ;
+; 2.667 ; syncCount[4] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.934      ;
+; 2.668 ; syncCount[4] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.935      ;
+; 2.669 ; syncCount[0] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.936      ;
+; 2.669 ; syncCount[0] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.019     ; 2.936      ;
+; 2.670 ; syncCount[0] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.937      ;
+; 2.723 ; bitCount[2]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 2.990      ;
+; 2.758 ; syncCount[1] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.044      ;
+; 2.763 ; syncCount[1] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.019     ; 3.030      ;
+; 2.763 ; syncCount[1] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.019     ; 3.030      ;
+; 2.764 ; syncCount[1] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 3.031      ;
+; 2.806 ; syncCount[3] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.092      ;
+; 2.849 ; bitCount[1]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 3.116      ;
+; 2.851 ; syncCount[3] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.137      ;
+; 2.854 ; syncCount[3] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.140      ;
+; 2.856 ; syncCount[3] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.019     ; 3.123      ;
+; 2.856 ; syncCount[3] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.019     ; 3.123      ;
+; 2.857 ; syncCount[3] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 3.124      ;
+; 2.894 ; bitCount[0]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.019     ; 3.161      ;
+; 2.928 ; bitCount[3]  ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.019      ; 3.233      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                             ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; -1.469 ; 1.000        ; 2.469          ; Port Rate        ; clk   ; Rise       ; clk              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; bitCount[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; bitCount[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; bitCount[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; bitCount[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; bitCount[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; client[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; client[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; client[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; client[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; syncCount[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; syncCount[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; syncCount[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; syncCount[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Fall       ; syncCount[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[4]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; client[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; client[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; client[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; client[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[4]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[4]|clk ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 1.370 ; 1.370 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 1.121 ; 1.121 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; b         ; clk        ; 10.249 ; 10.249 ; Rise       ; clk             ;
+; b         ; clk        ; 10.249 ; 10.249 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 9.163  ; 9.163  ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 8.442  ; 8.442  ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 8.778  ; 8.778  ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 8.937  ; 8.937  ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 9.163  ; 9.163  ; Fall       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; b         ; clk        ; 10.249 ; 10.249 ; Rise       ; clk             ;
+; b         ; clk        ; 10.249 ; 10.249 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 8.097  ; 8.097  ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 8.097  ; 8.097  ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 8.432  ; 8.432  ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 8.686  ; 8.686  ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 8.847  ; 8.847  ; Fall       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.477 ; -3.640        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.222 ; -13.222               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                    ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; -0.477 ; bitCount[0]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.497      ;
+; -0.477 ; bitCount[0]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.497      ;
+; -0.450 ; bitCount[1]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.470      ;
+; -0.450 ; bitCount[1]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.470      ;
+; -0.440 ; bitCount[0]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.460      ;
+; -0.439 ; bitCount[0]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.471      ;
+; -0.438 ; bitCount[0]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.470      ;
+; -0.436 ; bitCount[0]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.468      ;
+; -0.436 ; bitCount[0]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.468      ;
+; -0.428 ; bitCount[0]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.460      ;
+; -0.413 ; bitCount[1]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.433      ;
+; -0.412 ; bitCount[1]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.444      ;
+; -0.411 ; bitCount[1]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.443      ;
+; -0.409 ; bitCount[1]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.441      ;
+; -0.409 ; bitCount[1]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.441      ;
+; -0.401 ; bitCount[1]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.433      ;
+; -0.399 ; bitCount[2]  ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.419      ;
+; -0.399 ; bitCount[2]  ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.419      ;
+; -0.379 ; bitCount[3]  ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.411      ;
+; -0.379 ; bitCount[3]  ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.411      ;
+; -0.327 ; syncCount[3] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.347      ;
+; -0.327 ; syncCount[3] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.347      ;
+; -0.284 ; syncCount[1] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.304      ;
+; -0.284 ; syncCount[1] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.304      ;
+; -0.268 ; syncCount[0] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.288      ;
+; -0.268 ; syncCount[0] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.288      ;
+; -0.263 ; bitCount[2]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.283      ;
+; -0.262 ; bitCount[2]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.294      ;
+; -0.261 ; bitCount[2]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.293      ;
+; -0.259 ; bitCount[2]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; bitCount[2]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.251 ; bitCount[2]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
+; -0.244 ; syncCount[4] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.264      ;
+; -0.244 ; syncCount[4] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.264      ;
+; -0.241 ; syncCount[2] ; client[0]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.261      ;
+; -0.241 ; syncCount[2] ; client[1]    ; clk          ; clk         ; 1.000        ; -0.012     ; 1.261      ;
+; -0.241 ; bitCount[3]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.273      ;
+; -0.240 ; bitCount[3]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.284      ;
+; -0.239 ; bitCount[3]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.283      ;
+; -0.237 ; bitCount[3]  ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.281      ;
+; -0.237 ; bitCount[3]  ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.281      ;
+; -0.229 ; bitCount[3]  ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.273      ;
+; -0.181 ; syncCount[3] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.201      ;
+; -0.180 ; syncCount[3] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.179 ; syncCount[3] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.211      ;
+; -0.177 ; client[0]    ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; client[0]    ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; syncCount[3] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; syncCount[3] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.169 ; syncCount[3] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.201      ;
+; -0.165 ; client[1]    ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.197      ;
+; -0.165 ; client[1]    ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.197      ;
+; -0.138 ; syncCount[1] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.158      ;
+; -0.137 ; syncCount[1] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.136 ; syncCount[1] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.168      ;
+; -0.134 ; syncCount[1] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; syncCount[1] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.126 ; syncCount[1] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.158      ;
+; -0.122 ; syncCount[0] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.142      ;
+; -0.121 ; syncCount[0] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.153      ;
+; -0.120 ; syncCount[0] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.152      ;
+; -0.119 ; bitCount[4]  ; client[0]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.151      ;
+; -0.119 ; bitCount[4]  ; client[1]    ; clk          ; clk         ; 1.000        ; 0.000      ; 1.151      ;
+; -0.118 ; syncCount[0] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.150      ;
+; -0.118 ; syncCount[0] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.150      ;
+; -0.110 ; syncCount[0] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.142      ;
+; -0.098 ; syncCount[4] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.118      ;
+; -0.097 ; syncCount[4] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.129      ;
+; -0.096 ; syncCount[4] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.128      ;
+; -0.095 ; syncCount[2] ; bitCount[3]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.115      ;
+; -0.094 ; syncCount[2] ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.126      ;
+; -0.094 ; syncCount[4] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.126      ;
+; -0.094 ; syncCount[4] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.126      ;
+; -0.093 ; syncCount[2] ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.125      ;
+; -0.091 ; syncCount[2] ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.123      ;
+; -0.091 ; syncCount[2] ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.123      ;
+; -0.086 ; syncCount[4] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.118      ;
+; -0.083 ; syncCount[2] ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.115      ;
+; -0.041 ; client[0]    ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.073      ;
+; -0.040 ; client[0]    ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.084      ;
+; -0.039 ; client[0]    ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.083      ;
+; -0.037 ; client[0]    ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.081      ;
+; -0.037 ; client[0]    ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.081      ;
+; -0.029 ; client[1]    ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.061      ;
+; -0.029 ; client[0]    ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.073      ;
+; -0.028 ; client[1]    ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.072      ;
+; -0.027 ; client[1]    ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.071      ;
+; -0.025 ; client[1]    ; syncCount[0] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.069      ;
+; -0.025 ; client[1]    ; syncCount[3] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.069      ;
+; -0.022 ; syncCount[3] ; bitCount[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.054      ;
+; -0.021 ; syncCount[3] ; bitCount[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.053      ;
+; -0.021 ; syncCount[3] ; bitCount[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.053      ;
+; -0.017 ; client[1]    ; syncCount[2] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.061      ;
+; -0.005 ; bitCount[0]  ; bitCount[4]  ; clk          ; clk         ; 1.000        ; -0.012     ; 1.025      ;
+; 0.019  ; bitCount[4]  ; bitCount[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.013      ;
+; 0.020  ; bitCount[4]  ; syncCount[1] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.024      ;
+; 0.021  ; bitCount[4]  ; syncCount[4] ; clk          ; clk         ; 1.000        ; 0.012      ; 1.023      ;
+; 0.021  ; syncCount[1] ; bitCount[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.011      ;
+; 0.022  ; syncCount[1] ; bitCount[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.010      ;
+; 0.022  ; syncCount[1] ; bitCount[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.010      ;
++--------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                    ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; client[0]    ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; client[1]    ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; syncCount[0] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; syncCount[1] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; syncCount[4] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.442 ; syncCount[0] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.594      ;
+; 0.545 ; client[0]    ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.584 ; bitCount[4]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.736      ;
+; 0.609 ; bitCount[2]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.761      ;
+; 0.658 ; bitCount[0]  ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.810      ;
+; 0.661 ; syncCount[2] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.813      ;
+; 0.666 ; bitCount[1]  ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.818      ;
+; 0.687 ; syncCount[2] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.827      ;
+; 0.690 ; syncCount[4] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.830      ;
+; 0.702 ; syncCount[3] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.854      ;
+; 0.707 ; syncCount[0] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.859      ;
+; 0.707 ; syncCount[2] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.859      ;
+; 0.714 ; syncCount[0] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.854      ;
+; 0.730 ; syncCount[1] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.870      ;
+; 0.763 ; bitCount[1]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.773 ; syncCount[3] ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.913      ;
+; 0.775 ; syncCount[3] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.927      ;
+; 0.776 ; syncCount[1] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.928      ;
+; 0.790 ; bitCount[0]  ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.942      ;
+; 0.798 ; bitCount[0]  ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
+; 0.799 ; syncCount[0] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.951      ;
+; 0.807 ; bitCount[2]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.947      ;
+; 0.812 ; syncCount[2] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.964      ;
+; 0.815 ; syncCount[2] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.967      ;
+; 0.815 ; syncCount[2] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.967      ;
+; 0.815 ; syncCount[1] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.967      ;
+; 0.816 ; syncCount[2] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.968      ;
+; 0.818 ; syncCount[4] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.970      ;
+; 0.818 ; syncCount[4] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.970      ;
+; 0.819 ; syncCount[4] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.971      ;
+; 0.828 ; syncCount[1] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.980      ;
+; 0.842 ; syncCount[0] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.994      ;
+; 0.842 ; syncCount[0] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.994      ;
+; 0.843 ; syncCount[0] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.995      ;
+; 0.844 ; bitCount[3]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.996      ;
+; 0.849 ; bitCount[4]  ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.013      ;
+; 0.852 ; syncCount[0] ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.004      ;
+; 0.857 ; bitCount[4]  ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.021      ;
+; 0.857 ; bitCount[4]  ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.021      ;
+; 0.858 ; bitCount[1]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 0.998      ;
+; 0.858 ; syncCount[1] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.010      ;
+; 0.858 ; syncCount[1] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.010      ;
+; 0.859 ; bitCount[4]  ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.023      ;
+; 0.859 ; syncCount[1] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.011      ;
+; 0.860 ; bitCount[4]  ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.012      ;
+; 0.860 ; bitCount[4]  ; client[1]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.012      ;
+; 0.860 ; bitCount[4]  ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.024      ;
+; 0.861 ; bitCount[4]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.013      ;
+; 0.885 ; bitCount[0]  ; bitCount[4]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.025      ;
+; 0.897 ; client[1]    ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.061      ;
+; 0.901 ; syncCount[3] ; bitCount[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.901 ; syncCount[3] ; bitCount[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.902 ; syncCount[3] ; bitCount[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.905 ; client[1]    ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.069      ;
+; 0.905 ; client[1]    ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.069      ;
+; 0.907 ; client[1]    ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.071      ;
+; 0.908 ; client[1]    ; client[0]    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.908 ; client[1]    ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.072      ;
+; 0.909 ; client[1]    ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.909 ; client[0]    ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.073      ;
+; 0.910 ; bitCount[3]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.917 ; client[0]    ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.081      ;
+; 0.917 ; client[0]    ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.081      ;
+; 0.919 ; client[0]    ; syncCount[4] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.083      ;
+; 0.920 ; client[0]    ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.084      ;
+; 0.921 ; client[0]    ; bitCount[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 0.966 ; syncCount[4] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.118      ;
+; 0.971 ; syncCount[2] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.123      ;
+; 0.974 ; syncCount[2] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.114      ;
+; 0.974 ; syncCount[2] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.114      ;
+; 0.974 ; syncCount[2] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
+; 0.974 ; syncCount[4] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
+; 0.974 ; syncCount[4] ; syncCount[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
+; 0.975 ; syncCount[2] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.115      ;
+; 0.976 ; bitCount[2]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.116      ;
+; 0.977 ; syncCount[4] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.117      ;
+; 0.977 ; syncCount[4] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.117      ;
+; 0.977 ; syncCount[4] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.129      ;
+; 0.978 ; syncCount[4] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.118      ;
+; 1.001 ; syncCount[0] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.141      ;
+; 1.001 ; syncCount[0] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.141      ;
+; 1.002 ; syncCount[0] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.142      ;
+; 1.014 ; syncCount[1] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.017 ; syncCount[1] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.157      ;
+; 1.017 ; syncCount[1] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.157      ;
+; 1.018 ; syncCount[1] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.158      ;
+; 1.027 ; bitCount[1]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.167      ;
+; 1.049 ; syncCount[3] ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.201      ;
+; 1.054 ; bitCount[0]  ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.194      ;
+; 1.057 ; syncCount[3] ; syncCount[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 1.060 ; syncCount[3] ; client[0]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.200      ;
+; 1.060 ; syncCount[3] ; client[1]    ; clk          ; clk         ; 0.000        ; -0.012     ; 1.200      ;
+; 1.060 ; syncCount[3] ; syncCount[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 1.061 ; syncCount[3] ; bitCount[3]  ; clk          ; clk         ; 0.000        ; -0.012     ; 1.201      ;
+; 1.065 ; bitCount[3]  ; syncCount[2] ; clk          ; clk         ; 0.000        ; 0.012      ; 1.229      ;
++-------+--------------+--------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                             ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; clk   ; Rise       ; clk              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; bitCount[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; bitCount[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; bitCount[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; bitCount[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; bitCount[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; bitCount[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; client[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; client[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; client[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; client[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; syncCount[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; syncCount[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; syncCount[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; syncCount[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Fall       ; syncCount[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Fall       ; syncCount[4]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; bitCount[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; bitCount[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; client[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; client[0]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; client[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; client[1]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; syncCount[4]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; syncCount[4]|clk ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 0.271 ; 0.271 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 0.665 ; 0.665 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; b         ; clk        ; 5.335 ; 5.335 ; Rise       ; clk             ;
+; b         ; clk        ; 5.335 ; 5.335 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 4.276 ; 4.276 ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 3.951 ; 3.951 ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 4.084 ; 4.084 ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 4.180 ; 4.180 ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 4.276 ; 4.276 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; b         ; clk        ; 5.335 ; 5.335 ; Rise       ; clk             ;
+; b         ; clk        ; 5.335 ; 5.335 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 3.834 ; 3.834 ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 3.834 ; 3.834 ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 3.962 ; 3.962 ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 4.063 ; 4.063 ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 4.154 ; 4.154 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.986  ; 0.215 ; N/A      ; N/A     ; -1.469              ;
+;  clk             ; -2.986  ; 0.215 ; N/A      ; N/A     ; -1.469              ;
+; Design-wide TNS  ; -29.929 ; 0.0   ; 0.0      ; 0.0     ; -16.133             ;
+;  clk             ; -29.929 ; 0.000 ; N/A      ; N/A     ; -16.133             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 1.370 ; 1.370 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; d         ; clk        ; 1.121 ; 1.121 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; b         ; clk        ; 10.249 ; 10.249 ; Rise       ; clk             ;
+; b         ; clk        ; 10.249 ; 10.249 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 9.163  ; 9.163  ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 8.442  ; 8.442  ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 8.778  ; 8.778  ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 8.937  ; 8.937  ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 9.163  ; 9.163  ; Fall       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; b         ; clk        ; 5.335 ; 5.335 ; Rise       ; clk             ;
+; b         ; clk        ; 5.335 ; 5.335 ; Fall       ; clk             ;
+; q[*]      ; clk        ; 3.834 ; 3.834 ; Fall       ; clk             ;
+;  q[0]     ; clk        ; 3.834 ; 3.834 ; Fall       ; clk             ;
+;  q[1]     ; clk        ; 3.962 ; 3.962 ; Fall       ; clk             ;
+;  q[2]     ; clk        ; 4.063 ; 4.063 ; Fall       ; clk             ;
+;  q[3]     ; clk        ; 4.154 ; 4.154 ; Fall       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 0        ; 0        ; 0        ; 273      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 0        ; 0        ; 0        ; 273      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 13    ; 13   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu Nov 22 01:03:45 2012
+Info: Command: quartus_sta FiberOptics_RX -c FiberOptics_RX
+Info: qsta_default_script.tcl version: #2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'FiberOptics_RX.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.986
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.986       -29.929 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.469
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.469       -16.133 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.477
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.477        -3.640 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222       -13.222 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 276 megabytes
+    Info: Processing ended: Thu Nov 22 01:03:46 2012
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
